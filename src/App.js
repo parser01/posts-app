@@ -1,21 +1,13 @@
+import { useState } from "react";
+
 function App() {
-	let likes = 0;
-
-	function increment() {
-		likes += 1;
-		console.log(likes);
-	}
-
-	function decrement() {
-		likes -= 1;
-		console.log(likes);
-	}
+	const [likes, setLikes] = useState(0);
 
 	return (
 		<div className="App">
 			<h1>{likes}</h1>
-			<button onClick={increment}>Increment</button>
-			<button onClick={decrement}>Decrement</button>
+			<button onClick={() => setLikes(likes + 1)}>Increment</button>
+			<button onClick={() => setLikes(likes - 1)}>Decrement</button>
 		</div>
 	);
 }
